@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es" x-data="{ darkMode: false }" :class="{ 'dark': darkMode }">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechTime - Expertos en Smartwatches y Wearables en Aranjuez</title>
+    <meta name="description" content="Reparación, venta y asesoramiento experto en relojes inteligentes y wearables en Aranjuez. Tu dispositivo siempre a punto con TechTime.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5', // Indigo
+                        secondary: '#10B981', // Emerald
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Alpine.js CDN -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Marquee CSS -->
+    <style>
+      @keyframes marquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-100%); } }
+      .animate-marquee { animation: marquee 20s linear infinite; }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-900 bg-white dark:bg-gray-900 dark:text-gray-100">
+
+    <!-- Header / Navigation (Simple, with Dark Mode Toggle) -->
+    <header class="absolute top-0 left-0 w-full z-30 py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white drop-shadow-lg">TechTime</a>
+            <button @click="darkMode = !darkMode" class="p-2 rounded-full bg-white/20 text-white hover:bg-white/30 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white transition-all duration-300" aria-label="Toggle dark mode">
+                <i x-show="!darkMode" class="fas fa-moon"></i>
+                <i x-show="darkMode" class="fas fa-sun"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO Section -->
+    <section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+        <img src="https://images.pexels.com/photos/20727530/pexels-photo-20727530.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Hombre feliz usando un smartwatch al aire libre, simbolizando conexión y tecnología" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/60"></div> <!-- Dark overlay -->
+        <div class="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6 drop-shadow-xl animate-fade-in-up">
+                Tu Smartwatch Siempre al Máximo en Aranjuez
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-200 mb-8 drop-shadow-md animate-fade-in-up delay-100">
+                Reparación, Asesoramiento y Venta de Relojes Inteligentes y Wearables. Expertos Locales a tu Servicio.
+            </p>
+            <a href="#contact" class="inline-block bg-primary hover:bg-indigo-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg animate-fade-in-up delay-200">
+                ¡Quiero Mi Diagnóstico Gratuito!
+            </a>
+        </div>
+    </section>
+
+    <!-- THE PROBLEM Section (Overlapping Hero) -->
+    <section class="relative z-20 -mt-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-8 md:p-12">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center text-gray-900 dark:text-gray-100 mb-10">
+                ¿Problemas con tu Dispositivo Inteligente?
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <i class="fas fa-battery-empty text-5xl text-red-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">Batería Agotada o No Carga</h3>
+                    <p class="text-gray-600 dark:text-gray-400">¿Tu smartwatch no carga o la batería se agota rápidamente y te deja tirado a mitad del día?</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-desktop-medical text-5xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">Pantalla Rota o Fallos</h3>
+                    <p class="text-gray-600 dark:text-gray-400">¿Pantalla rota, sensores que no responden o software que falla constantemente?</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-question-circle text-5xl text-green-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">Confusión al Elegir o Configurar</h3>
+                    <p class="text-gray-600 dark:text-gray-400">¿Necesitas ayuda para elegir el wearable perfecto o configurarlo correctamente para tus necesidades?</p>
+                </div>
+            </div>
+            <p class="text-center text-xl text-gray-700 dark:text-gray-300 mt-10">
+                ¡No te preocupes! En <strong class="text-primary">TechTime Aranjuez</strong>, tenemos la solución que necesitas.
+            </p>
+        </div>
+    </section>
+
+    <!-- OUR SERVICES Section (Bento Grid) -->
+    <section class="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center text-gray-900 dark:text-gray-100 mb-12">
+                Nuestros Servicios Especializados
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Service 1: Reparación Exprés -->
+                <div class="md:col-span-2 bg-white dark:bg-gray-800 rounded-3xl shadow-xl p-8 relative overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <img src="https://placehold.co/800x600/e2e8f0/475569?text=REPARACION+EXPRESS" alt="Servicio de reparación express de smartwatch" class="w-full h-64 object-cover rounded-2xl mb-6 shadow-md">
+                        <h3 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">Reparación Exprés: Vuelve a Conectarte Rápido</h3>
+                        <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+                            Diagnóstico preciso y reparaciones rápidas para tu Apple Watch, Samsung Galaxy, Garmin y más. Pantallas, baterías, software. ¡Como nuevo en horas!
+                        </p>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center justify-center bg-primary hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-full self-start transition-all duration-300">
+                        <i class="fas fa-tools mr-2"></i> Reparar Ahora
+                    </a>
+                </div>
+
+                <!-- Service 2: Asesoramiento y Configuración -->
+                <div class="md:col-span-1 bg-white dark:bg-gray-800 rounded-3xl shadow-xl p-8 relative overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <img src="https://placehold.co/800x600/e2e8f0/475569?text=ASESORAMIENTO" alt="Servicio de asesoramiento para la compra de smartwatch" class="w-full h-64 object-cover rounded-2xl mb-6 shadow-md">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">Asesoramiento Experto: Encuentra Tu Match Perfecto</h3>
+                        <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+                            ¿No sabes qué smartwatch comprar? Te guiamos para elegir el ideal según tus necesidades y lo configuramos todo por ti. ¡Listo para usar!
+                        </p>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center justify-center bg-secondary hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full self-start transition-all duration-300">
+                        <i class="fas fa-lightbulb mr-2"></i> Quiero Asesoramiento
+                    </a>
+                </div>
+
+                <!-- Service 3: Venta de Wearables -->
+                <div class="md:col-span-3 lg:col-span-2 lg:col-start-2 bg-gray-900 text-white rounded-3xl shadow-xl p-8 relative overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <img src="https://placehold.co/800x600/27272a/d1d5db?text=VENTA+WEARABLES" alt="Venta de los últimos modelos de wearables" class="w-full h-64 object-cover rounded-2xl mb-6 shadow-md">
+                        <h3 class="text-3xl font-bold mb-4">Lo Último en Tecnología Wearable</h3>
+                        <p class="text-lg text-gray-200 mb-6">
+                            Descubre nuestra selección de los mejores relojes inteligentes y accesorios. Calidad garantizada y los precios más competitivos de Aranjuez.
+                        </p>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center justify-center bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-full self-start transition-all duration-300">
+                        <i class="fas fa-shopping-cart mr-2"></i> Ver Catálogo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCAL BENEFITS Section -->
+    <section class="py-16 md:py-24 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center text-gray-900 dark:text-gray-100 mb-12">
+                ¿Por Qué Elegir TechTime en Aranjuez?
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6 bg-gray-50 dark:bg-gray-700 rounded-2xl shadow-md transform hover:scale-105 transition-all duration-300">
+                    <div class="text-primary text-5xl mb-4"><i class="fas fa-map-marker-alt"></i></div>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-3">Proximidad y Confianza Local</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Somos tus vecinos en Aranjuez. Un trato cercano y soluciones rápidas sin salir de la ciudad.</p>
+                </div>
+                <div class="text-center p-6 bg-gray-50 dark:bg-gray-700 rounded-2xl shadow-md transform hover:scale-105 transition-all duration-300 delay-100">
+                    <div class="text-secondary text-5xl mb-4"><i class="fas fa-medal"></i></div>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-3">Expertos Certificados a Tu Lado</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Nuestro equipo está especializado en todas las marcas líderes. Tu dispositivo, en las mejores manos.</p>
+                </div>
+                <div class="text-center p-6 bg-gray-50 dark:bg-gray-700 rounded-2xl shadow-md transform hover:scale-105 transition-all duration-300 delay-200">
+                    <div class="text-blue-500 text-5xl mb-4"><i class="fas fa-clock"></i></div>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-3">Servicio Rápido y Garantizado</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Minimizamos el tiempo de espera y ofrecemos garantía en todas nuestras reparaciones y productos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST Section (Testimonials & Marquee) -->
+    <section class="py-16 md:py-24 bg-gray-100 dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center text-gray-900 dark:text-gray-100 mb-12">
+                Lo Que Dicen Nuestros Clientes
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300 italic mb-6">
+                            "Mi Apple Watch se mojó y pensé que estaba perdido. ¡TechTime lo dejó como nuevo en un día! Un servicio increíble en Aranjuez. 5 estrellas."
+                        </p>
+                    </div>
+                    <p class="font-semibold text-gray-900 dark:text-gray-100">- Laura G.</p>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300 italic mb-6">
+                            "Necesitaba un Garmin para mis entrenamientos y me asesoraron perfectamente. La configuración fue rapidísima. Muy profesionales."
+                        </p>
+                    </div>
+                    <p class="font-semibold text-gray-900 dark:text-gray-100">- Carlos M.</p>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300 italic mb-6">
+                            "La batería de mi Samsung Galaxy Watch duraba un suspiro. Ahora vuelve a funcionar horas y horas. ¡Gracias, TechTime!"
+                        </p>
+                    </div>
+                    <p class="font-semibold text-gray-900 dark:text-gray-100">- Sofía P.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Infinite Marquee -->
+        <div class="w-full overflow-hidden flex whitespace-nowrap bg-gray-50 dark:bg-gray-800 py-6 border-y border-gray-200 dark:border-gray-700">
+            <div class="flex w-max animate-marquee gap-16 px-8 items-center text-xl font-bold text-gray-400 dark:text-gray-500">
+                <span>Apple Watch</span>
+                <span>Samsung Galaxy Watch</span>
+                <span>Garmin</span>
+                <span>Fitbit</span>
+                <span>Huawei</span>
+                <span>Xiaomi</span>
+                <span>Oppo Watch</span>
+                <span>Amazfit</span>
+            </div>
+            <div class="flex w-max animate-marquee gap-16 px-8 items-center text-xl font-bold text-gray-400 dark:text-gray-500" aria-hidden="true">
+                <span>Apple Watch</span>
+                <span>Samsung Galaxy Watch</span>
+                <span>Garmin</span>
+                <span>Fitbit</span>
+                <span>Huawei</span>
+                <span>Xiaomi</span>
+                <span>Oppo Watch</span>
+                <span>Amazfit</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-16 md:py-24 bg-gradient-to-br from-primary to-indigo-600 dark:from-gray-900 dark:to-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white dark:bg-gray-700 rounded-3xl shadow-2xl p-8 md:p-12 lg:p-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-gray-100 mb-6">
+                        ¡Tu Dispositivo Inteligente Te Espera!
+                    </h2>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">
+                        ¿Listo para darle una nueva vida a tu smartwatch o encontrar el wearable perfecto? Contacta con TechTime hoy mismo. ¡Estamos en Aranjuez para ayudarte!
+                    </p>
+                    <div class="mb-6">
+                        <p class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">TechTime</p>
+                        <p class="text-gray-700 dark:text-gray-300">C/ Ficticia, 123, 28300 Aranjuez, Madrid</p>
+                        <p class="text-gray-700 dark:text-gray-300">Teléfono: +34 912 34 56 78</p>
+                        <p class="text-gray-700 dark:text-gray-300">Email: info@techtime.es</p>
+                    </div>
+                </div>
+                <!-- Contact Form -->
+                <form class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">Nombre Completo</label>
+                        <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl shadow-sm focus:ring-primary focus:border-primary dark:bg-gray-800 dark:text-gray-100">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">Email</label>
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl shadow-sm focus:ring-primary focus:border-primary dark:bg-gray-800 dark:text-gray-100">
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">Teléfono (Opcional)</label>
+                        <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl shadow-sm focus:ring-primary focus:border-primary dark:bg-gray-800 dark:text-gray-100">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">Tu Mensaje o Consulta</label>
+                        <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl shadow-sm focus:ring-primary focus:border-primary dark:bg-gray-800 dark:text-gray-100"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-primary hover:bg-indigo-700 text-white font-bold py-4 px-6 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        <i class="fas fa-paper-plane mr-2"></i> Enviar Consulta
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-black py-8 text-center text-gray-400 dark:text-gray-500">
+        <p>&copy; <span x-text="new Date().getFullYear()"></span> TechTime. Todos los derechos reservados. | Hecho con <i class="fas fa-heart text-red-500"></i> en Aranjuez.</p>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/+34600123456" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+
+<script>
+  // Autodestrucción en 24h
+  const limite = 1773908364573;
+  if (Date.now() > limite) {
+    document.documentElement.innerHTML = '<body style="display:flex;justify-content:center;align-items:center;height:100vh;background:#111;color:#fff;font-family:sans-serif;text-align:center;padding:20px;"><div><h1 style="color:#ef4444;font-size:3rem;margin-bottom:1rem;">⏱️ Demo Caducada</h1><p style="font-size:1.5rem;color:#ddd;">El tiempo de prueba de 24 horas ha finalizado.</p><p style="color:#888;margin-top:2rem;">Contacta con la agencia para adquirir la versión definitiva, eliminar este límite y publicarla bajo tu propio dominio profesional (.com).</p></div></body>';
+  }
+</script>
+
+</body>
+</html>
