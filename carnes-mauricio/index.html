@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es" x-data="{ darkMode: false }" :class="{ 'dark': darkMode }">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carnes Mauricio - Calidad y Sabor Superior en Ocaña</title>
+    <meta name="description" content="Carnes Mauricio: Tu proveedor de confianza de carne al por mayor y menor en Ocaña. Frescura garantizada y cortes premium para tu hogar o negocio.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { darkMode: 'class' }</script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        @keyframes marquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-100%); } }
+        .animate-marquee { animation: marquee 20s linear infinite; }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 antialiased">
+
+    <!-- Dark Mode Toggle -->
+    <div class="fixed top-4 right-4 z-50">
+        <button @click="darkMode = !darkMode" class="p-3 rounded-full bg-white dark:bg-gray-800 shadow-md text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <i class="fas" :class="darkMode ? 'fa-sun' : 'fa-moon'"></i>
+        </button>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center text-white overflow-hidden">
+        <img src="https://images.pexels.com/photos/20727530/pexels-photo-20727530.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Cortes de carne fresca de alta calidad" class="absolute inset-0 w-full h-full object-cover brightness-75">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">
+                Carnes Frescas y de Calidad Superior en Ocaña
+            </h1>
+            <p class="text-lg sm:text-xl mb-8 font-light drop-shadow-md">
+                Desde cortes premium para tu hogar hasta abastecimiento al por mayor para tu negocio. Sabor garantizado, servicio excepcional.
+            </p>
+            <a href="#contacto" class="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+                ¡Haz tu Pedido Hoy!
+            </a>
+        </div>
+    </section>
+
+    <!-- The Problem Section (Overlapping Hero) -->
+    <section class="relative z-20 -mt-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-8 sm:p-12 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-gray-900 dark:text-gray-100">
+                ¿Cansado de la carne que no cumple tus expectativas?
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-2xl shadow-md transform hover:scale-105 transition duration-300">
+                    <i class="fas fa-question-circle text-red-500 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-gray-100">Origen Incierto</h3>
+                    <p class="text-gray-700 dark:text-gray-300">Dificultad para encontrar carne fresca y de origen confiable. ¿Sabes realmente de dónde viene lo que comes?</p>
+                </div>
+                <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-2xl shadow-md transform hover:scale-105 transition duration-300">
+                    <i class="fas fa-clock text-red-500 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-gray-100">Tiempo Perdido</h3>
+                    <p class="text-gray-700 dark:text-gray-300">Pérdida de tiempo buscando proveedores mayoristas eficientes que realmente entiendan tus necesidades de negocio.</p>
+                </div>
+                <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-2xl shadow-md transform hover:scale-105 transition duration-300">
+                    <i class="fas fa-frown-open text-red-500 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-gray-100">Calidad Variable</h3>
+                    <p class="text-gray-700 dark:text-gray-300">Calidad inconsistente que afecta el sabor de tus platos o la reputación de tu negocio. ¡Mereces lo mejor siempre!</p>
+                </div>
+            </div>
+            <p class="mt-8 text-lg text-gray-700 dark:text-gray-300">En Carnes Mauricio, resolvemos estos problemas con <span class="font-semibold text-red-600">frescura, confianza y calidad garantizada.</span></p>
+        </div>
+    </section>
+
+    <!-- Our Services Section (Bento Grid) -->
+    <section class="py-16 sm:py-24 bg-gray-100 dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+                    Nuestros Servicios Cárnicos
+                </h2>
+                <p class="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+                    Ofrecemos una variedad de soluciones para satisfacer las necesidades de cada cliente en Ocaña.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <!-- Service 1: Venta al Por Menor -->
+                <div class="md:col-span-2 bg-white dark:bg-gray-800 rounded-3xl shadow-xl p-8 relative overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <img src="https://placehold.co/800x600/e2e8f0/475569?text=VENTA+AL+POR+MENOR" alt="Cortes de carne para el hogar" class="w-full h-64 object-cover rounded-2xl mb-6 shadow-md">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-3">
+                            Venta al Por Menor: Cortes Seleccionados para Tu Hogar
+                        </h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-6">
+                            Disfruta la frescura y el sabor que solo Carnes Mauricio te ofrece. Preparamos cortes personalizados para tus comidas diarias o eventos especiales, con la calidad que tu familia merece.
+                        </p>
+                    </div>
+                    <a href="#contacto" class="inline-block self-start text-red-600 hover:text-red-700 font-semibold transition duration-300">
+                        Ver Cortes Disponibles <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2: Venta al Por Mayor -->
+                <div class="md:col-span-1 bg-white dark:bg-gray-800 rounded-3xl shadow-xl p-8 relative overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <img src="https://placehold.co/800x600/e2e8f0/475569?text=VENTA+AL+POR+MAYOR" alt="Carne para negocios al por mayor" class="w-full h-64 object-cover rounded-2xl mb-6 shadow-md">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-3">
+                            Venta al Por Mayor: Tu Aliado Cárnico Confiable
+                        </h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-6">
+                            Abastece tu restaurante, carnicería o negocio con la mejor carne. Calidad consistente, precios competitivos y entregas puntuales en Ocaña.
+                        </p>
+                    </div>
+                    <a href="#contacto" class="inline-block self-start text-red-600 hover:text-red-700 font-semibold transition duration-300">
+                        Solicitar Cotización <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3: Preparaciones Especiales -->
+                <div class="md:col-span-3 lg:col-span-2 lg:col-start-2 bg-gray-900 text-white rounded-3xl shadow-xl p-8 relative overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <img src="https://placehold.co/800x600/e2e8f0/475569?text=PREPARACIONES+ESPECIALES" alt="Cortes y preparaciones de carne especiales" class="w-full h-64 object-cover rounded-2xl mb-6 shadow-md">
+                        <h3 class="text-2xl font-bold mb-3">
+                            Preparaciones Especiales: Marinadas y Cortes a Medida
+                        </h3>
+                        <p class="text-gray-300 mb-6">
+                            Desde carnes marinadas listas para asar hasta cortes específicos para recetas gourmet. Cuéntanos tu idea, nosotros la hacemos realidad con la máxima frescura y sabor.
+                        </p>
+                    </div>
+                    <a href="#contacto" class="inline-block self-start text-red-400 hover:text-red-300 font-semibold transition duration-300">
+                        Explorar Opciones <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Local Benefits Section -->
+    <section class="py-16 sm:py-24 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+                    ¿Por qué elegir Carnes Mauricio en Ocaña?
+                </h2>
+                <p class="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+                    Somos más que carne; somos compromiso, calidad y el sabor que nos une en nuestra comunidad.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6 bg-gray-50 dark:bg-gray-700 rounded-2xl shadow-md transition duration-300 hover:shadow-lg">
+                    <i class="fas fa-leaf text-red-500 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-gray-100">Frescura Diaria en Ocaña</h3>
+                    <p class="text-gray-700 dark:text-gray-300">Recibimos nuestros productos frescos cada día, garantizando la máxima calidad en cada corte, directamente para ti en Ocaña.</p>
+                </div>
+                <div class="text-center p-6 bg-gray-50 dark:bg-gray-700 rounded-2xl shadow-md transition duration-300 hover:shadow-lg">
+                    <i class="fas fa-handshake text-red-500 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-gray-100">Atención Personalizada</h3>
+                    <p class="text-gray-700 dark:text-gray-300">Conocemos a nuestros clientes y sus necesidades. En Carnes Mauricio, te ofrecemos un servicio cercano y asesoramiento experto, con el toque local de Ocaña.</p>
+                </div>
+                <div class="text-center p-6 bg-gray-50 dark:bg-gray-700 rounded-2xl shadow-md transition duration-300 hover:shadow-lg">
+                    <i class="fas fa-city text-red-500 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-gray-100">Apoyo al Comercio Local</h3>
+                    <p class="text-gray-700 dark:text-gray-300">Al elegirnos, apoyas una empresa de Ocaña que contribuye al desarrollo económico de nuestra comunidad. ¡Calidad local para nuestra gente!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 sm:py-24 bg-gray-100 dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+                    Nuestros Clientes lo Confirman
+                </h2>
+                <p class="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+                    La satisfacción de quienes confían en nosotros es nuestra mejor carta de presentación.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-8 relative overflow-hidden">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4 italic">
+                        "Siempre compro en Carnes Mauricio para mi restaurante. La calidad es insuperable y las entregas en Ocaña son siempre a tiempo. ¡Mis clientes lo notan!"
+                    </p>
+                    <p class="font-semibold text-gray-900 dark:text-gray-100">- Sofía G., Restauradora</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-8 relative overflow-hidden">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4 italic">
+                        "Desde que descubrimos Carnes Mauricio, nuestras parrilladas familiares son otro nivel. La carne es tierna y con un sabor increíble. ¡Muy recomendados!"
+                    </p>
+                    <p class="font-semibold text-gray-900 dark:text-gray-100">- Carlos P., Cliente Residencial</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-8 relative overflow-hidden">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4 italic">
+                        "Necesitábamos un proveedor mayorista confiable en Ocaña y los encontramos. Precios justos, excelente atención y carne de primera. ¡Un gran aliado para nuestro negocio!"
+                    </p>
+                    <p class="font-semibold text-gray-900 dark:text-gray-100">- Ana M., Gerente de Compras</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Infinite Marquee Section -->
+    <div class="w-full overflow-hidden flex whitespace-nowrap bg-red-600 py-6 border-y border-red-700">
+        <div class="flex w-max animate-marquee gap-16 px-8 items-center text-xl font-bold text-white opacity-90">
+            <span>CALIDAD PREMIUM</span>
+            <i class="fas fa-award text-yellow-300"></i>
+            <span>SABOR GARANTIZADO</span>
+            <i class="fas fa-fire-alt text-yellow-300"></i>
+            <span>ENTREGA RÁPIDA EN OCAÑA</span>
+            <i class="fas fa-truck text-yellow-300"></i>
+            <span>FRESCURA TOTAL</span>
+            <i class="fas fa-leaf text-yellow-300"></i>
+            <span>SOPORTE LOCAL</span>
+            <i class="fas fa-handshake text-yellow-300"></i>
+            <span>PRECIOS JUSTOS</span>
+            <i class="fas fa-dollar-sign text-yellow-300"></i>
+        </div>
+        <div class="flex w-max animate-marquee gap-16 px-8 items-center text-xl font-bold text-white opacity-90" aria-hidden="true">
+            <span>CALIDAD PREMIUM</span>
+            <i class="fas fa-award text-yellow-300"></i>
+            <span>SABOR GARANTIZADO</span>
+            <i class="fas fa-fire-alt text-yellow-300"></i>
+            <span>ENTREGA RÁPIDA EN OCAÑA</span>
+            <i class="fas fa-truck text-yellow-300"></i>
+            <span>FRESCURA TOTAL</span>
+            <i class="fas fa-leaf text-yellow-300"></i>
+            <span>SOPORTE LOCAL</span>
+            <i class="fas fa-handshake text-yellow-300"></i>
+            <span>PRECIOS JUSTOS</span>
+            <i class="fas fa-dollar-sign text-yellow-300"></i>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-16 sm:py-24 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+                    Contáctanos Hoy
+                </h2>
+                <p class="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+                    Estamos listos para atender tus pedidos y resolver cualquier duda.
+                </p>
+            </div>
+            <div class="max-w-3xl mx-auto bg-gray-50 dark:bg-gray-900 rounded-3xl shadow-xl p-8 sm:p-10">
+                <form action="#" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Nombre Completo</label>
+                        <input type="text" name="name" id="name" autocomplete="name" required class="mt-1 block w-full border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 rounded-md shadow-sm p-3 focus:ring-red-500 focus:border-red-500 sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Correo Electrónico</label>
+                        <input type="email" name="email" id="email" autocomplete="email" required class="mt-1 block w-full border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 rounded-md shadow-sm p-3 focus:ring-red-500 focus:border-red-500 sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Número de Teléfono</label>
+                        <input type="tel" name="phone" id="phone" autocomplete="tel" class="mt-1 block w-full border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 rounded-md shadow-sm p-3 focus:ring-red-500 focus:border-red-500 sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Tu Mensaje o Pedido</label>
+                        <textarea id="message" name="message" rows="4" required class="mt-1 block w-full border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 rounded-md shadow-sm p-3 focus:ring-red-500 focus:border-red-500 sm:text-sm"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full flex justify-center py-3 px-6 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition duration-300 transform hover:scale-105">
+                            ¡Solicita tu Cotización o Haz tu Pedido!
+                        </button>
+                    </div>
+                </form>
+                <div class="mt-10 text-center">
+                    <p class="text-xl font-bold text-gray-900 dark:text-gray-100">Carnes Mauricio</p>
+                    <p class="text-md text-gray-700 dark:text-gray-300">Tu fuente de carne fresca y de calidad en Ocaña.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-black text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2023 Carnes Mauricio. Todos los derechos reservados.</p>
+            <p class="mt-2 text-gray-400">Hecho con pasión por el sabor en Ocaña.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/###########" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition duration-300 transform hover:scale-110">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+
+<script>
+  // Autodestrucción en 24h
+  const limite = 1773907557386;
+  if (Date.now() > limite) {
+    document.documentElement.innerHTML = '<body style="display:flex;justify-content:center;align-items:center;height:100vh;background:#111;color:#fff;font-family:sans-serif;text-align:center;padding:20px;"><div><h1 style="color:#ef4444;font-size:3rem;margin-bottom:1rem;">⏱️ Demo Caducada</h1><p style="font-size:1.5rem;color:#ddd;">El tiempo de prueba de 24 horas ha finalizado.</p><p style="color:#888;margin-top:2rem;">Contacta con la agencia para adquirir la versión definitiva, eliminar este límite y publicarla bajo tu propio dominio profesional (.com).</p></div></body>';
+  }
+</script>
+
+</body>
+</html>
