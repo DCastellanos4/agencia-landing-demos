@@ -1,0 +1,369 @@
+<?php /* Template Name: Landing Agencia */ ?>
+<!DOCTYPE html>
+<html lang="es" x-data="{ darkMode: false }" :class="{ 'dark': darkMode }">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Técnicas Reunidas | Ingeniería de Vanguardia en Madrid</title>
+    <meta name="description" content="Técnicas Reunidas ofrece soluciones de ingeniería innovadoras y eficientes para proyectos complejos en Madrid. Confía en expertos líderes.">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#1E40AF', // A strong blue for primary actions
+              secondary: '#6D28D9', // A deep purple for accents
+              accent: '#FCD34D', // A bright yellow for highlights
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- FontAwesome CDN for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Alpine.js CDN -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Marquee Animation CSS -->
+    <style>
+      @keyframes marquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-100%); } }
+      .animate-marquee { animation: marquee 20s linear infinite; }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-50 font-sans antialiased">
+
+    <!-- Dark Mode Toggle Button -->
+    <button @click="darkMode = !darkMode" class="fixed top-6 right-6 z-50 p-3 rounded-full bg-white dark:bg-gray-700 shadow-lg transition-colors duration-300">
+        <template x-if="darkMode">
+            <i class="fas fa-sun text-yellow-400 text-xl"></i>
+        </template>
+        <template x-if="!darkMode">
+            <i class="fas fa-moon text-gray-700 text-xl"></i>
+        </template>
+        <span class="sr-only">Toggle dark mode</span>
+    </button>
+
+    <!-- HERO SECTION -->
+    <section class="relative overflow-hidden min-h-screen bg-gray-900 flex items-center justify-center py-20 px-4">
+        <img src="https://images.pexels.com/photos/3831159/pexels-photo-3831159.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Ingenieros colaborando en un proyecto complejo" class="absolute inset-0 w-full h-full object-cover opacity-30">
+        <div class="relative z-10 text-center text-white max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-up">
+                Ingeniería que Transforma: Soluciones Reales para Madrid.
+            </h1>
+            <p class="text-xl md:text-2xl mb-10 font-light opacity-90 animate-fade-in-up delay-200">
+                En Técnicas Reunidas, convertimos tus desafíos más complejos en proyectos de éxito, con la precisión y experiencia que solo los líderes pueden ofrecer.
+            </p>
+            <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-semibold rounded-full shadow-lg text-white bg-primary hover:bg-blue-700 transform hover:scale-105 transition-all duration-300 animate-fade-in-up delay-400">
+                Impulsa tu Próximo Proyecto Ahora <i class="fas fa-arrow-right ml-3"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- THE PROBLEM (PAS) SECTION -->
+    <section class="relative z-20 -mt-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-fade-in">
+        <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-8 lg:p-12 text-center transform hover:scale-[1.01] transition-transform duration-300">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-gray-800 dark:text-white">
+                ¿Te Identificas con Estos Retos de Ingeniería?
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-lg text-gray-700 dark:text-gray-300">
+                <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <i class="fas fa-exclamation-triangle text-red-500 text-4xl mb-4"></i>
+                    <h3 class="font-semibold text-xl mb-2">Proyectos Estancados</h3>
+                    <p>¿Tus ideas de ingeniería no avanzan por falta de experiencia especializada?</p>
+                </div>
+                <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <i class="fas fa-dollar-sign text-green-500 text-4xl mb-4"></i>
+                    <h3 class="font-semibold text-xl mb-2">Costes y Plazos Descontrolados</h3>
+                    <p>¿Preocupado por sobrecostes y retrasos que ponen en riesgo tu inversión?</p>
+                </div>
+                <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <i class="fas fa-cogs text-blue-500 text-4xl mb-4"></i>
+                    <h3 class="font-semibold text-xl mb-2">Falta de Soluciones Duraderas</h3>
+                    <p>¿Necesitas soluciones que realmente funcionen a largo plazo y sean eficientes?</p>
+                </div>
+            </div>
+            <p class="mt-10 text-xl text-gray-800 dark:text-white font-medium">
+                En Técnicas Reunidas, resolvemos estos desafíos con ingeniería de precisión.
+            </p>
+        </div>
+    </section>
+
+    <!-- OUR SERVICES (BENTO GRID) SECTION -->
+    <section id="services" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-16 text-gray-800 dark:text-white">
+            Nuestros Servicios de Ingeniería de Vanguardia
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <!-- Service 1 Card -->
+            <div class="md:col-span-2 bg-white dark:bg-gray-800 rounded-3xl shadow-xl p-8 relative overflow-hidden transform hover:scale-[1.01] transition-transform duration-300">
+                <img src="https://images.pexels.com/photos/110469/pexels-photo-110469.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Ingenieros revisando planos y documentos" class="w-full h-64 object-cover rounded-2xl mb-6 shadow-md">
+                <h3 class="text-3xl font-bold mb-4 text-gray-800 dark:text-white">
+                    Consultoría y Viabilidad
+                </h3>
+                <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+                    Analizamos tu proyecto a fondo, identificando riesgos y oportunidades para un inicio sólido y una planificación estratégica sin fisuras. Transformamos la incertidumbre en claridad para tus inversiones.
+                </p>
+                <ul class="list-disc list-inside text-gray-600 dark:text-gray-400 space-y-2">
+                    <li>Análisis exhaustivo de requisitos.</li>
+                    <li>Evaluación de riesgos y oportunidades.</li>
+                    <li>Estudios de factibilidad técnica y económica.</li>
+                </ul>
+                <a href="#contact" class="mt-8 inline-block text-primary dark:text-blue-400 font-semibold hover:underline">
+                    Saber más <i class="fas fa-chevron-right ml-2"></i>
+                </a>
+            </div>
+
+            <!-- Service 2 Card -->
+            <div class="md:col-span-1 bg-white dark:bg-gray-800 rounded-3xl shadow-xl p-8 relative overflow-hidden transform hover:scale-[1.01] transition-transform duration-300">
+                <img src="https://images.pexels.com/photos/34194565/pexels-photo-34194565.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Diseño de estructuras con software de ingeniería" class="w-full h-64 object-cover rounded-2xl mb-6 shadow-md">
+                <h3 class="text-3xl font-bold mb-4 text-gray-800 dark:text-white">
+                    Diseño y Ejecución de Proyectos
+                </h3>
+                <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+                    Desde el concepto inicial hasta la puesta en marcha, garantizamos la excelencia técnica y la eficiencia operativa en cada fase de tu proyecto.
+                </p>
+                <ul class="list-disc list-inside text-gray-600 dark:text-gray-400 space-y-2">
+                    <li>Ingeniería básica y de detalle.</li>
+                    <li>Gestión integral de la construcción.</li>
+                    <li>Supervisión y control de calidad.</li>
+                </ul>
+                <a href="#contact" class="mt-8 inline-block text-primary dark:text-blue-400 font-semibold hover:underline">
+                    Empezar un proyecto <i class="fas fa-chevron-right ml-2"></i>
+                </a>
+            </div>
+
+            <!-- Service 3 Card (Full width and distinct style) -->
+            <div class="md:col-span-3 lg:col-span-2 lg:col-start-2 bg-gradient-to-br from-primary to-secondary text-white rounded-3xl shadow-xl p-8 relative overflow-hidden transform hover:scale-[1.01] transition-transform duration-300">
+                <img src="https://images.pexels.com/photos/373905/pexels-photo-373905.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Mantenimiento y optimización de maquinaria industrial" class="w-full h-64 object-cover rounded-2xl mb-6 shadow-md">
+                <h3 class="text-3xl font-bold mb-4">
+                    Gestión y Optimización de Activos
+                </h3>
+                <p class="text-lg opacity-90 mb-6">
+                    Mejoramos el rendimiento, la eficiencia y la vida útil de tus infraestructuras y equipos con un mantenimiento inteligente y estratégico, reduciendo costes operativos a largo plazo.
+                </p>
+                <ul class="list-disc list-inside text-gray-200 space-y-2">
+                    <li>Planes de mantenimiento predictivo.</li>
+                    <li>Auditorías de eficiencia energética.</li>
+                    <li>Modernización y actualización de equipos.</li>
+                </ul>
+                <a href="#contact" class="mt-8 inline-block text-accent font-semibold hover:underline">
+                    Optimiza tus activos <i class="fas fa-chevron-right ml-2"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- LOCAL BENEFITS SECTION -->
+    <section class="bg-gray-100 dark:bg-gray-900 py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-16 text-gray-800 dark:text-white">
+                ¿Por Qué Elegir Técnicas Reunidas en Madrid?
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-lg p-8 transform hover:-translate-y-2 transition-transform duration-300">
+                    <i class="fas fa-map-marker-alt text-primary text-5xl mb-6"></i>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800 dark:text-white">
+                        Conocimiento Local, Impacto Global
+                    </h3>
+                    <p class="text-lg text-gray-700 dark:text-gray-300">
+                        Nuestra sede en Madrid nos permite entender las regulaciones y el mercado local a la perfección, ofreciendo soluciones ajustadas a tu entorno y con una visión global.
+                    </p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-lg p-8 transform hover:-translate-y-2 transition-transform duration-300">
+                    <i class="fas fa-tachometer-alt text-secondary text-5xl mb-6"></i>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800 dark:text-white">
+                        Proyectos Ágiles y Eficientes
+                    </h3>
+                    <p class="text-lg text-gray-700 dark:text-gray-300">
+                        Con un equipo experto y recursos optimizados en la capital, garantizamos plazos y presupuestos controlados para tu tranquilidad y el éxito de tu proyecto.
+                    </p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-lg p-8 transform hover:-translate-y-2 transition-transform duration-300">
+                    <i class="fas fa-handshake text-accent text-5xl mb-6"></i>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800 dark:text-white">
+                        Soporte Cercano y Personalizado
+                    </h3>
+                    <p class="text-lg text-gray-700 dark:text-gray-300">
+                        Estamos siempre a tu lado, listos para resolver cualquier desafío con la cercanía y confianza de un socio estratégico en Madrid. Tu éxito es nuestra prioridad.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST (TESTIMONIALS) SECTION -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-16 text-gray-800 dark:text-white">
+            Lo Que Dicen Nuestros Clientes
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-xl p-8 flex flex-col justify-between transform hover:shadow-2xl transition-shadow duration-300">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 italic mb-6">
+                        "Técnicas Reunidas superó nuestras expectativas. Su enfoque en la eficiencia y el detalle fue clave para el éxito de nuestro complejo proyecto en Madrid."
+                    </p>
+                </div>
+                <div class="text-right">
+                    <p class="font-bold text-gray-900 dark:text-white">- Carlos G.</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Director de Operaciones</p>
+                </div>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-xl p-8 flex flex-col justify-between transform hover:shadow-2xl transition-shadow duration-300">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 italic mb-6">
+                        "La consultoría inicial fue increíblemente valiosa. Nos ayudaron a ver los desafíos desde una nueva perspectiva y a planificar con confianza."
+                    </p>
+                </div>
+                <div class="text-right">
+                    <p class="font-bold text-gray-900 dark:text-white">- Laura M.</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Gerente de Desarrollo</p>
+                </div>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-xl p-8 flex flex-col justify-between transform hover:shadow-2xl transition-shadow duration-300">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 italic mb-6">
+                        "Profesionales de primera. Su gestión optimizó nuestros activos y nos ahorró costes significativos a largo plazo. ¡Recomendado 100%!"
+                    </p>
+                </div>
+                <div class="text-right">
+                    <p class="font-bold text-gray-900 dark:text-white">- Javier R.</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">CEO</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFINITE MARQUEE SECTION -->
+    <div class="w-full overflow-hidden flex whitespace-nowrap bg-gray-50 dark:bg-gray-800 py-6 border-y border-gray-200 dark:border-gray-700">
+        <div class="flex w-max animate-marquee gap-16 px-8 items-center text-xl font-bold text-gray-400 dark:text-gray-600">
+            <span>Construcciones Madrid</span>
+            <span>Innovación Global</span>
+            <span>Desarrollo Urbano</span>
+            <span>Energía Sostenible</span>
+            <span>Infraestructuras Futuras</span>
+            <span>Logística Avanzada</span>
+        </div>
+        <div class="flex w-max animate-marquee gap-16 px-8 items-center text-xl font-bold text-gray-400 dark:text-gray-600" aria-hidden="true">
+            <span>Construcciones Madrid</span>
+            <span>Innovación Global</span>
+            <span>Desarrollo Urbano</span>
+            <span>Energía Sostenible</span>
+            <span>Infraestructuras Futuras</span>
+            <span>Logística Avanzada</span>
+        </div>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-16 text-gray-800 dark:text-white">
+            ¿Listo para llevar tu proyecto al siguiente nivel?
+        </h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-8 lg:p-12">
+            <!-- Contact Form -->
+            <div>
+                <p class="text-xl text-gray-700 dark:text-gray-300 mb-8">
+                    Contacta hoy con Técnicas Reunidas y descubre cómo nuestra ingeniería puede impulsar tu éxito.
+                </p>
+                <form class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Nombre Completo</label>
+                        <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-xl border-gray-300 dark:border-gray-600 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-primary focus:border-primary transition-colors duration-300" placeholder="Tu nombre">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-xl border-gray-300 dark:border-gray-600 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-primary focus:border-primary transition-colors duration-300" placeholder="tu.correo@ejemplo.com">
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Teléfono</label>
+                        <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 rounded-xl border-gray-300 dark:border-gray-600 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-primary focus:border-primary transition-colors duration-300" placeholder="Ej: +34 600 123 456">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Tu Mensaje</label>
+                        <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 rounded-xl border-gray-300 dark:border-gray-600 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-primary focus:border-primary transition-colors duration-300" placeholder="Cuéntanos sobre tu proyecto o consulta..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent text-lg font-semibold rounded-full shadow-md text-white bg-primary hover:bg-blue-700 transform hover:scale-105 transition-all duration-300">
+                        Enviar Consulta <i class="fas fa-paper-plane ml-3"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Company Info -->
+            <div class="bg-gray-50 dark:bg-gray-700 rounded-2xl p-8 shadow-inner flex flex-col justify-center text-center lg:text-left">
+                <h3 class="text-3xl font-bold mb-4 text-gray-800 dark:text-white">Técnicas Reunidas</h3>
+                <p class="text-xl text-gray-700 dark:text-gray-300 mb-4">
+                    <i class="fas fa-map-marker-alt text-primary mr-3"></i> C/ Gran Vía, 12, 28013 Madrid
+                </p>
+                <p class="text-xl text-gray-700 dark:text-gray-300 mb-4">
+                    <i class="fas fa-phone-alt text-primary mr-3"></i> <a href="tel:+34911234567" class="hover:underline">+34 911 234 567</a>
+                </p>
+                <p class="text-xl text-gray-700 dark:text-gray-300 mb-8">
+                    <i class="fas fa-envelope text-primary mr-3"></i> <a href="mailto:info@tecnicasreunidas.com" class="hover:underline">info@tecnicasreunidas.com</a>
+                </p>
+                <div class="mt-auto">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.1652011933096!2d-3.704254084601446!3d40.42007897936357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42287e025f181f%3A0x6a0c0b3b4d4a8e8!2sGran%20V%C3%ADa%2C%2012%2C%2028013%20Madrid!5e0!3m2!1ses!2ses!4v1678912345678!5m2!1ses!2ses"
+                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-xl shadow-md">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/34600123456" target="_blank" class="fixed bottom-6 right-6 z-50 p-4 rounded-full bg-green-500 text-white shadow-lg hover:bg-green-600 transform hover:scale-110 transition-transform duration-300" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-gray-950 text-white text-center py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p>&copy; <?php echo date("Y"); ?> Técnicas Reunidas. Todos los derechos reservados.</p>
+            <div class="mt-4 text-sm text-gray-400">
+                <a href="#" class="hover:underline mx-2">Política de Privacidad</a> |
+                <a href="#" class="hover:underline mx-2">Aviso Legal</a>
+            </div>
+        </div>
+    </footer>
+
+
+<script>
+  // Autodestrucción en 24h
+  const limite = 1773912291443;
+  if (Date.now() > limite) {
+    document.documentElement.innerHTML = '<body style="display:flex;justify-content:center;align-items:center;height:100vh;background:#111;color:#fff;font-family:sans-serif;text-align:center;padding:20px;"><div><h1 style="color:#ef4444;font-size:3rem;margin-bottom:1rem;">⏱️ Demo Caducada</h1><p style="font-size:1.5rem;color:#ddd;">El tiempo de prueba de 24 horas ha finalizado.</p><p style="color:#888;margin-top:2rem;">Contacta con la agencia para adquirir la versión definitiva, eliminar este límite y publicarla bajo tu propio dominio profesional (.com).</p></div></body>';
+  }
+</script>
+
+</body>
+</html>
