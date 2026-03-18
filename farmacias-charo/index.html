@@ -1,0 +1,305 @@
+<?php /* Template Name: Landing Agencia */ ?>
+<!DOCTYPE html>
+<html lang="es" x-data="{ darkMode: false }" :class="{ 'dark': darkMode }">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmacias Charo - Tu Bienestar en Madrid Centro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4CAF50', // A nice green for pharmacy/health
+                        secondary: '#8BC34A', // Lighter green
+                        accent: '#FFC107', // A touch of yellow for warmth
+                        darkbg: '#1a202c',
+                        darkcard: '#2d3748',
+                    }
+                }
+            }
+        }
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        @keyframes marquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-100%); } }
+        .animate-marquee { animation: marquee 20s linear infinite; }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-50 dark:bg-darkbg dark:text-gray-200">
+
+    <!-- Dark Mode Toggle -->
+    <button x-on:click="darkMode = !darkMode" class="fixed top-4 right-4 z-50 p-3 rounded-full bg-white dark:bg-darkcard shadow-lg text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-primary">
+        <template x-if="darkMode">
+            <i class="fas fa-sun"></i>
+        </template>
+        <template x-if="!darkMode">
+            <i class="fas fa-moon"></i>
+        </template>
+    </button>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/20727530/pexels-photo-20727530.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');">
+        <div class="absolute inset-0 bg-black/60 dark:bg-black/70"></div>
+        <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-3xl">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6 animate-fade-in-up">
+                Tu Bienestar es Nuestra Prioridad en <span class="text-primary">Madrid Centro</span>.
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-200 mb-8 animate-fade-in-up delay-100">
+                Atención farmacéutica experta y cercana. Encuentra todo lo que necesitas para tu salud y la de tu familia, justo en el corazón de Madrid.
+            </p>
+            <a href="#contacto" class="inline-block bg-primary text-white font-bold py-4 px-8 rounded-full text-lg uppercase tracking-wide shadow-lg hover:bg-secondary transition-all duration-300 transform hover:scale-105 animate-fade-in-up delay-200">
+                Pide tu Asesoramiento Personalizado
+            </a>
+        </div>
+    </section>
+
+    <!-- The Problem Section (Overlap Effect) -->
+    <section class="relative z-20 -mt-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white dark:bg-darkcard rounded-3xl shadow-xl p-8 md:p-12 lg:p-16 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-50 mb-6">
+                ¿Cansado de que tu salud no sea una prioridad?
+            </h2>
+            <p class="text-lg text-gray-700 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
+                Sabemos que tu salud no espera. En otras farmacias, a menudo te encuentras con...
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="flex flex-col items-center p-6 bg-gray-50 dark:bg-darkbg rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
+                    <i class="fas fa-clock text-5xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-50 mb-2">Esperas Interminables</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Tu tiempo es oro. No lo malgastes en filas.</p>
+                </div>
+                <div class="flex flex-col items-center p-6 bg-gray-50 dark:bg-darkbg rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
+                    <i class="fas fa-question-circle text-5xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-50 mb-2">Consejo Genérico</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Necesitas soluciones a tu medida, no respuestas estándar.</p>
+                </div>
+                <div class="flex flex-col items-center p-6 bg-gray-50 dark:bg-darkbg rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
+                    <i class="fas fa-map-marker-alt text-5xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-50 mb-2">Productos Limitados</h3>
+                    <p class="text-gray-600 dark:text-gray-400">¿No encuentras lo que buscas en tu zona?</p>
+                </div>
+            </div>
+            <p class="text-lg text-gray-700 dark:text-gray-300 mt-8 max-w-3xl mx-auto">
+                En Farmacias Charo, cambiamos eso. Tu bienestar es nuestra prioridad.
+            </p>
+        </div>
+    </section>
+
+    <!-- Our Services Section (Bento Grid) -->
+    <section class="py-20 bg-gray-100 dark:bg-darkbg px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto text-center mb-12">
+            <h2 class="text-4xl font-extrabold text-gray-900 dark:text-gray-50 mb-4">Nuestros Servicios Pensados Para Ti.</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300">
+                En Farmacias Charo, vamos más allá de dispensar medicinas. Te ofrecemos un cuidado integral y soluciones personalizadas.
+            </p>
+        </div>
+
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Service 1 -->
+            <div class="md:col-span-2 bg-white dark:bg-darkcard rounded-3xl shadow-xl p-8 relative overflow-hidden flex flex-col justify-between">
+                <div>
+                    <img src="https://placehold.co/800x600/e2e8f0/475569?text=ASESORAMIENTO" alt="Asesoramiento Farmacéutico Personalizado" class="w-full h-64 object-cover rounded-2xl mb-6">
+                    <h3 class="text-3xl font-bold text-gray-900 dark:text-gray-50 mb-4">Asesoramiento Farmacéutico Personalizado</h3>
+                    <p class="text-gray-700 dark:text-gray-300 text-lg mb-6">
+                        Recibe orientación clara y adaptada a tus necesidades de salud. Resolvemos tus dudas con profesionalidad, empatía y cercanía. Nos tomamos el tiempo para escucharte.
+                    </p>
+                </div>
+                <a href="#contacto" class="mt-auto inline-block text-primary hover:text-secondary font-semibold text-lg transition-colors duration-300">
+                    Saber más <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="md:col-span-1 bg-white dark:bg-darkcard rounded-3xl shadow-xl p-8 relative overflow-hidden flex flex-col justify-between">
+                <div>
+                    <img src="https://placehold.co/800x600/e2e8f0/475569?text=PRODUCTOS" alt="Amplia Gama de Productos de Calidad" class="w-full h-64 object-cover rounded-2xl mb-6">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-4">Amplia Gama de Productos</h3>
+                    <p class="text-gray-700 dark:text-gray-300 text-lg mb-6">
+                        Desde medicinas esenciales hasta productos de dermocosmética, nutrición y ortopedia. Solo las mejores marcas para tu bienestar.
+                    </p>
+                </div>
+                <a href="#contacto" class="mt-auto inline-block text-primary hover:text-secondary font-semibold text-lg transition-colors duration-300">
+                    Explora nuestra selección <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+            <!-- Service 3 (Spans multiple columns and starts later) -->
+            <div class="md:col-span-3 lg:col-span-2 lg:col-start-2 bg-gradient-to-br from-primary to-secondary text-white rounded-3xl shadow-xl p-8 relative overflow-hidden flex flex-col justify-between">
+                <div>
+                    <img src="https://placehold.co/800x600/4CAF50/FFFFFF?text=PREVENCION" alt="Salud y Prevención Integral" class="w-full h-64 object-cover rounded-2xl mb-6 opacity-80 mix-blend-multiply">
+                    <h3 class="text-3xl font-bold text-white mb-4">Salud y Prevención Integral</h3>
+                    <p class="text-gray-100 text-lg mb-6">
+                        Te ofrecemos programas de seguimiento, control de parámetros básicos (presión, glucosa) y consejos prácticos para un estilo de vida saludable. Nos preocupamos por tu bienestar a largo plazo.
+                    </p>
+                </div>
+                <a href="#contacto" class="mt-auto inline-block bg-white text-primary font-semibold py-3 px-6 rounded-full hover:bg-gray-100 transition-colors duration-300">
+                    Descubre cómo cuidarte <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Local Benefits Section -->
+    <section class="py-20 bg-white dark:bg-darkcard px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto text-center mb-12">
+            <h2 class="text-4xl font-extrabold text-gray-900 dark:text-gray-50 mb-4">
+                ¿Por qué Farmacias Charo es tu Mejor Opción en <span class="text-primary">Madrid Centro</span>?
+            </h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300">
+                Somos más que una farmacia. Somos tu vecino, tu experto de confianza, tu apoyo en el barrio.
+            </p>
+        </div>
+
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="flex flex-col items-center text-center p-8 bg-gray-50 dark:bg-darkbg rounded-xl shadow-md transition-transform transform hover:scale-105">
+                <i class="fas fa-handshake text-6xl text-primary mb-6"></i>
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-3">Cercanía y Confianza</h3>
+                <p class="text-gray-700 dark:text-gray-300 text-lg">
+                    Tu farmacia de barrio en <strong class="text-primary">Madrid Centro</strong>, con el trato humano y personalizado que mereces. Siempre a tu disposición.
+                </p>
+            </div>
+            <div class="flex flex-col items-center text-center p-8 bg-gray-50 dark:bg-darkbg rounded-xl shadow-md transition-transform transform hover:scale-105">
+                <i class="fas fa-brain text-6xl text-primary mb-6"></i>
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-3">Expertos Locales</h3>
+                <p class="text-gray-700 dark:text-gray-300 text-lg">
+                    Conocemos las necesidades específicas de la comunidad de <strong class="text-primary">Madrid Centro</strong>. Te ofrecemos soluciones rápidas y relevantes.
+                </p>
+            </div>
+            <div class="flex flex-col items-center text-center p-8 bg-gray-50 dark:bg-darkbg rounded-xl shadow-md transition-transform transform hover:scale-105">
+                <i class="fas fa-heartbeat text-6xl text-primary mb-6"></i>
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-3">Tu Aliado de Salud</h3>
+                <p class="text-gray-700 dark:text-gray-300 text-lg">
+                    Somos más que una farmacia. Somos un punto de referencia y apoyo para tu salud integral en <strong class="text-primary">Madrid Centro</strong>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section (Testimonials & Marquee) -->
+    <section class="py-20 bg-gray-100 dark:bg-darkbg px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto text-center mb-12">
+            <h2 class="text-4xl font-extrabold text-gray-900 dark:text-gray-50 mb-4">Nuestros Clientes lo Confirman.</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300">
+                La confianza se gana día a día, y estamos orgullosos de la nuestra.
+            </p>
+        </div>
+
+        <!-- Testimonials -->
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div class="bg-white dark:bg-darkcard rounded-xl shadow-md p-8 text-center transition-transform transform hover:scale-105">
+                <div class="flex justify-center mb-4 text-accent">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="text-gray-700 dark:text-gray-300 italic mb-6">
+                    "Siempre encuentro lo que busco y, lo más importante, un consejo amable y profesional. ¡Mi farmacia de referencia en Malasaña!"
+                </p>
+                <p class="font-bold text-primary">- Ana M., Vecina de Malasaña</p>
+            </div>
+            <div class="bg-white dark:bg-darkcard rounded-xl shadow-md p-8 text-center transition-transform transform hover:scale-105">
+                <div class="flex justify-center mb-4 text-accent">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="text-gray-700 dark:text-gray-300 italic mb-6">
+                    "El personal es increíblemente atento. Me han ayudado en varias ocasiones con problemas de salud de mis hijos. Un trato de 10."
+                </p>
+                <p class="font-bold text-primary">- Javier S., Padre de Familia</p>
+            </div>
+            <div class="bg-white dark:bg-darkcard rounded-xl shadow-md p-8 text-center transition-transform transform hover:scale-105">
+                <div class="flex justify-center mb-4 text-accent">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="text-gray-700 dark:text-gray-300 italic mb-6">
+                    "Gran variedad de productos y siempre con una sonrisa. Se nota que les importa el bienestar de la gente del barrio. Excelente atención."
+                </p>
+                <p class="font-bold text-primary">- Elena G., Cliente Frecuente</p>
+            </div>
+        </div>
+
+        <!-- Infinite Marquee -->
+        <div class="w-full overflow-hidden flex whitespace-nowrap bg-white dark:bg-darkcard py-6 border-y border-gray-200 dark:border-gray-700 shadow-md">
+            <div class="flex w-max animate-marquee gap-16 px-8 items-center text-xl font-bold text-gray-400 dark:text-gray-500">
+                <span class="whitespace-nowrap flex items-center gap-2"><i class="fas fa-heart text-primary"></i> Salud al Día</span>
+                <span class="whitespace-nowrap flex items-center gap-2"><i class="fas fa-leaf text-secondary"></i> Bienestar Total</span>
+                <span class="whitespace-nowrap flex items-center gap-2"><i class="fas fa-shield-alt text-primary"></i> Confianza Médica</span>
+                <span class="whitespace-nowrap flex items-center gap-2"><i class="fas fa-hand-holding-heart text-secondary"></i> Cuidado Integral</span>
+                <span class="whitespace-nowrap flex items-center gap-2"><i class="fas fa-lightbulb text-accent"></i> Innovación Farmacéutica</span>
+                <span class="whitespace-nowrap flex items-center gap-2"><i class="fas fa-star text-primary"></i> Tu Salud, Nuestra Misión</span>
+            </div>
+            <div class="flex w-max animate-marquee gap-16 px-8 items-center text-xl font-bold text-gray-400 dark:text-gray-500" aria-hidden="true">
+                <span class="whitespace-nowrap flex items-center gap-2"><i class="fas fa-heart text-primary"></i> Salud al Día</span>
+                <span class="whitespace-nowrap flex items-center gap-2"><i class="fas fa-leaf text-secondary"></i> Bienestar Total</span>
+                <span class="whitespace-nowrap flex items-center gap-2"><i class="fas fa-shield-alt text-primary"></i> Confianza Médica</span>
+                <span class="whitespace-nowrap flex items-center gap-2"><i class="fas fa-hand-holding-heart text-secondary"></i> Cuidado Integral</span>
+                <span class="whitespace-nowrap flex items-center gap-2"><i class="fas fa-lightbulb text-accent"></i> Innovación Farmacéutica</span>
+                <span class="whitespace-nowrap flex items-center gap-2"><i class="fas fa-star text-primary"></i> Tu Salud, Nuestra Misión</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-20 bg-primary dark:bg-darkbg px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto bg-white dark:bg-darkcard rounded-3xl shadow-xl p-8 md:p-12 lg:p-16">
+            <h2 class="text-4xl font-extrabold text-gray-900 dark:text-gray-50 mb-4 text-center">
+                Estamos Aquí Para Ayudarte.
+            </h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300 mb-10 text-center">
+                Cuéntanos qué necesitas. En Farmacias Charo, tu bienestar es nuestra prioridad.
+            </p>
+
+            <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label for="nombre" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Nombre Completo</label>
+                    <input type="text" id="nombre" name="nombre" class="shadow appearance-none border rounded-xl w-full py-3 px-4 text-gray-700 dark:text-gray-200 leading-tight focus:outline-none focus:shadow-outline focus:border-primary dark:bg-darkbg dark:border-gray-700" placeholder="Tu Nombre">
+                </div>
+                <div>
+                    <label for="email" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" class="shadow appearance-none border rounded-xl w-full py-3 px-4 text-gray-700 dark:text-gray-200 leading-tight focus:outline-none focus:shadow-outline focus:border-primary dark:bg-darkbg dark:border-gray-700" placeholder="tu.email@ejemplo.com">
+                </div>
+                <div class="md:col-span-2">
+                    <label for="telefono" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" class="shadow appearance-none border rounded-xl w-full py-3 px-4 text-gray-700 dark:text-gray-200 leading-tight focus:outline-none focus:shadow-outline focus:border-primary dark:bg-darkbg dark:border-gray-700" placeholder="+34 600 123 456">
+                </div>
+                <div class="md:col-span-2">
+                    <label for="mensaje" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Tu Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" class="shadow appearance-none border rounded-xl w-full py-3 px-4 text-gray-700 dark:text-gray-200 leading-tight focus:outline-none focus:shadow-outline focus:border-primary dark:bg-darkbg dark:border-gray-700" placeholder="¿Cómo podemos ayudarte hoy?"></textarea>
+                </div>
+                <div class="md:col-span-2 text-center">
+                    <button type="submit" class="bg-primary text-white font-bold py-3 px-8 rounded-full text-lg uppercase tracking-wide shadow-lg hover:bg-secondary transition-all duration-300 transform hover:scale-105">
+                        Enviar Consulta
+                    </button>
+                </div>
+            </form>
+
+            <div class="mt-12 text-center text-gray-700 dark:text-gray-300 text-lg">
+                <p class="font-semibold mb-2">Farmacias Charo</p>
+                <p>Tu Farmacia de Confianza en Madrid Centro</p>
+                <p>Estamos en <span class="text-primary font-bold">Madrid Centro</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/34600000000" target="_blank" class="fixed bottom-6 right-6 z-50 p-4 rounded-full bg-green-500 text-white shadow-lg hover:bg-green-600 transition-all duration-300 transform hover:scale-110">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 dark:bg-black py-8 text-center text-gray-400 text-sm">
+        <p>&copy; 2023 Farmacias Charo. Todos los derechos reservados. Desarrollado con <i class="fas fa-heart text-red-500 mx-1"></i> para tu salud.</p>
+    </footer>
+
+
+<script>
+  // Autodestrucción en 24h
+  const limite = 1773909681445;
+  if (Date.now() > limite) {
+    document.documentElement.innerHTML = '<body style="display:flex;justify-content:center;align-items:center;height:100vh;background:#111;color:#fff;font-family:sans-serif;text-align:center;padding:20px;"><div><h1 style="color:#ef4444;font-size:3rem;margin-bottom:1rem;">⏱️ Demo Caducada</h1><p style="font-size:1.5rem;color:#ddd;">El tiempo de prueba de 24 horas ha finalizado.</p><p style="color:#888;margin-top:2rem;">Contacta con la agencia para adquirir la versión definitiva, eliminar este límite y publicarla bajo tu propio dominio profesional (.com).</p></div></body>';
+  }
+</script>
+
+</body>
+</html>
